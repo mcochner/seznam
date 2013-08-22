@@ -30,10 +30,10 @@ public class User implements Serializable{
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
-	@SequenceGenerator(name="user_sequence", sequenceName="SAG_BOOKCASE_SEQ", allocationSize=1)
+	@SequenceGenerator(name="SAG_BOOKCASE_SEQ", sequenceName="SAG_BOOKCASE_SEQ", allocationSize=1)
 	@Id
 	@Column(name="user_id")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_sequence")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SAG_BOOKCASE_SEQ")
 	private int uid;
 
 	@Column(name = "FIRST_NAME")

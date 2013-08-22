@@ -8,4 +8,5 @@ public interface UserDao {
 	public void removeUser(Integer uid);
 	public void updateUser(User user);
 	public User findUser(Integer uid);
+	public void removeUser(User user);
 }

@@ -13,22 +13,27 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.idc.seznam.HomeController;
 
-@Service
+@Service(value = "UserDaoImp")
 public class UserDaoImp implements UserDao {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
-	
+
 	@Autowired
 	private SessionFactory factory;
 
-//	public UserDaoImp() {
-//		factory = new AnnotationConfiguration().addPackage("com.idc.seznam.hibernate").
-//				addAnnotatedClass(User.class).configure().buildSessionFactory();
-//	}
+	// CREATE SEQUENCE "IDC_SAGE"."SAG_BOOKCASE_SEQ" MINVALUE 1 MAXVALUE
+	// 9999999999 INCREMENT BY 1 START WITH 244459 NOCACHE NOORDER NOCYCLE ;
+
+	// public UserDaoImp() {
+	// factory = new
+	// AnnotationConfiguration().addPackage("com.idc.seznam.hibernate").
+	// addAnnotatedClass(User.class).configure().buildSessionFactory();
+	// }
 
 	@Override
 	public void addUser(User user) {
@@ -54,12 +59,11 @@ public class UserDaoImp implements UserDao {
 		List returnList = new ArrayList<User>();
 		try {
 			tx = session.beginTransaction();
-			
-			
-			String hql = "FROM User";   // HQL
+
+			String hql = "FROM User"; // HQL
 			Query query = session.createQuery(hql);
-			returnList = query.list();  
-			
+			returnList = query.list();
+
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -79,11 +83,11 @@ public class UserDaoImp implements UserDao {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			
-			// vymazu radek s uid v db 
+
+			// vymazu radek s uid v db
 			User user = (User) session.get(User.class, uid);
 			session.delete(user);
-			
+
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -97,17 +101,16 @@ public class UserDaoImp implements UserDao {
 	@Override
 	public void updateUser(User user) {
 		int uid = user.getUid();
-		//TODO Jak updatovat usera
+		// TODO Jak updatovat usera
 
-		
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			
-			// update s uid v db 
+
+			// update s uid v db
 			session.update(user);
-			
+
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -126,7 +129,8 @@ public class UserDaoImp implements UserDao {
 		try {
 			tx = session.beginTransaction();
 			user = (User) session.get(User.class, uid);
-			logger.info(" find user: " + user.getLastName() + ", "+user.getLastName());
+			logger.info(" find user: " + user.getLastName() + ", "
+					+ user.getLastName());
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -136,7 +140,12 @@ public class UserDaoImp implements UserDao {
 			session.close();
 		}
 		return user;
-		
+	}
+
+	@Override
+	public void removeUser(User user) {
+		int uid = user.getUid();
+		removeUser(uid);
 	}
 
 }

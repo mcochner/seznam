@@ -4,17 +4,17 @@
 
 <hibernate-configuration>
 	<session-factory>
+		<mapping class="com.idc.seznam.User" />
 
-		<property name="hibernate.dialect">
-			org.hibernate.dialect.Oracle10gDialect
-		</property>
-		<property name="hibernate.connection.driver_class">
-			oracle.jdbc.driver.OracleDriver
-		</property>
+<!-- 		<property name="hibernate.dialect"> -->
+<!-- 		org.hibernate.dialect.Oracle10gDialect -->
+<!-- 		</property> -->
+<!-- 		<property name="hibernate.connection.driver_class"> -->
+<!-- 		oracle.jdbc.driver.OracleDriver -->
+<!-- 		</property> -->
 
-		<property name="hibernate.connection.url">
-			jdbc:oracle:thin:idc_sage/idc_sage@sage-ora1.dev.idc.com:1521:DEV
-		</property>
-		
+		<!-- <property name="hibernate.connection.url"> -->
+		<!-- jdbc:oracle:thin:idc_sage/idc_sage@sage-ora1.dev.idc.com:1521:DEV -->
+		<!-- </property> -->
 	</session-factory>
 </hibernate-configuration>

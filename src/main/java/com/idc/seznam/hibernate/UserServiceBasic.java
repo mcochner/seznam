@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.idc.seznam.HomeController;
 
 
-public class UserServiceBasic implements UserServiceInterface {
+public class UserServiceBasic implements UserService {
 
 	private ArrayList<User> userList;
 	static int counter = 1;
@@ -98,6 +98,12 @@ public class UserServiceBasic implements UserServiceInterface {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public void saveUsers(User... users) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.idc.seznam.hibernate.User;
-import com.idc.seznam.hibernate.UserServiceInterface;
+import com.idc.seznam.hibernate.UserService;
 import com.idc.seznam.hibernate.UserType;
 import com.idc.seznam.hibernate.UserValidator;
 
@@ -37,7 +37,7 @@ import com.idc.seznam.hibernate.UserValidator;
 public class HomeController {
 
 	@Autowired
-	private UserServiceInterface usersService;
+	private UserService usersService;
 	
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
@@ -142,7 +142,7 @@ public class HomeController {
 
 			u.setUrl(new URL("http://www.idc.com"));
 
-			usersService.saveUser(u);
+			
 
 			User u2 = new User();
 			u2.setFirstName("Petr");
@@ -150,15 +150,15 @@ public class HomeController {
 			u2.setDateStarted(new Date(103, 1, 1));
 			u2.setType(UserType.CUSTOMER);
 			u2.setUrl(new URL("http://www.seznam.cz"));
-			usersService.saveUser(u2);
-
+		
 			User u3 = new User();
 			u3.setFirstName("Oli");
 			u3.setLastName("Olinnen");
 			u3.setDateStarted(new Date(90, 5, 3));
 			u3.setType(UserType.EMPLOYEE);
 			u3.setUrl(new URL("http://www.google.com"));
-			usersService.saveUser(u3);
+			
+			usersService.saveUsers(u,u2,u3);
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
