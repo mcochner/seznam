@@ -49,6 +49,7 @@ public class UserServiceImp implements UserService {
 		}
 	}
 
+	
 	@Transactional(readOnly = true)
 	public List<User> getUsers() {
 		return userDao.listUsers();
