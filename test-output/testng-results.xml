@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="265" started-at="2013-08-23T14:43:30Z" finished-at="2013-08-23T14:43:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="265" started-at="2013-08-23T14:43:30Z" finished-at="2013-08-23T14:43:31Z">
+      <class name="com.idc.seznam.UserServiceImpTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.idc.seznam.UserServiceImpTest@318f37c]" name="before" is-config="true" duration-ms="219" started-at="2013-08-23T16:43:30Z" finished-at="2013-08-23T16:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="test_aaa()[pri:0, instance:com.idc.seznam.UserServiceImpTest@318f37c]" name="test_aaa" duration-ms="34" started-at="2013-08-23T16:43:31Z" finished-at="2013-08-23T16:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_aaa -->
+        <test-method status="PASS" signature="before()[pri:0, instance:com.idc.seznam.UserServiceImpTest@318f37c]" name="before" is-config="true" duration-ms="2" started-at="2013-08-23T16:43:31Z" finished-at="2013-08-23T16:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="test_bbb()[pri:0, instance:com.idc.seznam.UserServiceImpTest@318f37c]" name="test_bbb" duration-ms="0" started-at="2013-08-23T16:43:31Z" finished-at="2013-08-23T16:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_bbb -->
+      </class> <!-- com.idc.seznam.UserServiceImpTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

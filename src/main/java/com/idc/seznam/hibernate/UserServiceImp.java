@@ -24,6 +24,8 @@ public class UserServiceImp implements UserService {
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
+	public UserServiceImp(){}
+
 
 	@Transactional
 	public void saveUsers(User ... users){
