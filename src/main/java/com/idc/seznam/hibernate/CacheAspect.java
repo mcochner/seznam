@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.idc.seznam.HomeController;
 
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class CacheAspect {
 
 	List<User> ulist = null;
